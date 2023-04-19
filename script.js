@@ -1,15 +1,19 @@
 function compararNumeros() {
-    const numero1 = Number(document.getElementById("numero1").value);
-    const numero2 = Number(document.getElementById("numero2").value);
-  
-    let mensaje;
-    if (numero1 > numero2) {
-      mensaje = "El primer número es mayor";
-    } else if (numero1 < numero2) {
-      mensaje = "El segundo número es mayor.";
+    let num1 = document.getElementById("num1").value;
+    let num2 = document.getElementById("num2").value;
+
+    if (num1 && num2) {
+        num1 = parseFloat(num1);
+        num2 = parseFloat(num2);
+
+        if (num1 > num2) {
+            alert(`${num1} es mayor que ${num2}`);
+        } else if (num2 > num1) {
+            alert(`${num2} es mayor que ${num1}`);
+        } else {
+            alert("Los dos números son iguales");
+        }
     } else {
-      mensaje = "Los dos números son iguales.";
+        alert("No se han introducido números");
     }
-    
-    alert(mensaje);
-  }
+}
